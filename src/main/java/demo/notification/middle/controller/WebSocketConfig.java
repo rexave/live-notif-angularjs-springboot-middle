@@ -13,14 +13,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/websocket"); //.setAllowedOrigins("*").withSockJS();
+		registry.addEndpoint("/websocket").setAllowedOrigins("*").withSockJS();
 	}
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry config) {
-		config.enableStompBrokerRelay("/notifications")
+		config.enableStompBrokerRelay("/topic")
 				.setRelayHost("localhost")
-				.setRelayPort(61616);
+				.setRelayPort(61613);
 //				.setClientLogin("admin")
 //				.setClientPasscode("admin");
 		config.setApplicationDestinationPrefixes("/app");
