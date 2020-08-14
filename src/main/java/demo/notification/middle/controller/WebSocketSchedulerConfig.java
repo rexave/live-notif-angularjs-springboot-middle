@@ -23,7 +23,7 @@ public class WebSocketSchedulerConfig {
 	@Autowired
 	private SimpMessagingTemplate template;
 
-	@Scheduled(fixedRate = 3000)
+//	@Scheduled(fixedRate = 3000)
 	public void publishUpdates() {
 		String message = "It's " + LocalDateTime.now().format(new DateTimeFormatterBuilder()
 				.appendValue(HOUR_OF_DAY, 2)
