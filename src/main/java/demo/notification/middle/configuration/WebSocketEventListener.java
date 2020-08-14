@@ -1,4 +1,4 @@
-package demo.notification.middle.controller;
+package demo.notification.middle.configuration;
 
 import demo.notification.middle.dto.MessageNotification;
 import org.springframework.beans.factory.annotation.Autowired;

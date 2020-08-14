@@ -1,17 +1,13 @@
-package demo.notification.middle.controller;
+package demo.notification.middle.configuration;
 
 import demo.notification.middle.dto.MessageNotification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import java.time.LocalDateTime;
-import java.time.chrono.IsoChronology;
-import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
-import java.time.format.ResolverStyle;
 import java.time.format.SignStyle;
 
 import static java.time.temporal.ChronoField.*;
