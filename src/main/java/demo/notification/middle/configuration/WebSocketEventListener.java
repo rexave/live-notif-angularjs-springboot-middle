@@ -25,9 +25,10 @@ public class WebSocketEventListener {
 		StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
 		String username = (String) headerAccessor.getSessionAttributes().get("username");
 		if (username != null) {
-			MessageNotification chatMessage = new MessageNotification();
-			chatMessage.setContenu("has left the channel");
-			chatMessage.setAuthor(username);
+			MessageNotification chatMessage = MessageNotification.builder()
+					.contenu("has left the channel")
+					.author(username)
+					.build();
 			messagingTemplate.convertAndSend("/topic/public", chatMessage);
 		}
 	}
