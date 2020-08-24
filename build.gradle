@@ -18,6 +18,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-reactor-netty'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.security:spring-security-messaging'
+
+
 	implementation("org.apache.activemq:activemq-stomp:5.16.0")
 //	implementation("org.apache.activemq:artemis-jms-server")
 
