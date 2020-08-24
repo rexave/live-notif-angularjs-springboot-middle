@@ -30,8 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("toto").password(passwordEncoder().encode("titi")).roles("USER");
-		auth.inMemoryAuthentication().withUser("toto2").password(passwordEncoder().encode("titi")).roles("CONSULT");
+		auth.inMemoryAuthentication().withUser("toto").password(passwordEncoder().encode("titi")).roles(RolesEnum.STANDARD);
+		auth.inMemoryAuthentication().withUser("toto2").password(passwordEncoder().encode("titi")).roles(RolesEnum.CONSULTATION);
 	}
 
 	@Bean

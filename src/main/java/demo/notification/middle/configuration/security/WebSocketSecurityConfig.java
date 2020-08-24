@@ -12,10 +12,13 @@ public class WebSocketSecurityConfig extends AbstractSecurityWebSocketMessageBro
 	@Override
 	protected void configureInbound(MessageSecurityMetadataSourceRegistry messages) {
 		messages
-				.simpDestMatchers("/socket/lecture").hasRole(CONSULTATION)
-				.simpDestMatchers("/socket/prive").hasRole(STANDARD)
-				.simpDestMatchers("/socket/**").authenticated()
-				.anyMessage().authenticated();
+				.nullDestMatcher().authenticated()
+//				.simpDestMatchers("/topic/**").authenticated()
+				.simpSubscribeDestMatchers("/topic/prive/**").hasRole(STANDARD)
+				.simpSubscribeDestMatchers("/topic/lecture/**").hasRole(CONSULTATION)
+				.anyMessage().denyAll()
+
+		;
 	}
 
 	@Override
